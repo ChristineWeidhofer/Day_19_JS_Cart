@@ -10,8 +10,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
-h2 {
-  background-image: linear-gradient(to left, white, gray);
+h2.hero-title, h2.basket-title {
+  background-image: linear-gradient(to left, white, gray 40%);
 }
 .mynav {
   background-image: linear-gradient(to right, white,#b4d2e7);
@@ -24,6 +24,7 @@ h2 {
 .nav-link {
   font-weight: bold;
   font-size: larger;
+  text-transform: uppercase;
 }
 .navbar-brand img {
   object-fit: cover;
@@ -35,17 +36,16 @@ h2 {
   transform: scale(1.02);
 }
 .add-button {
-  background-image: radial-gradient(gray, white);
+  background-image: linear-gradient(to top, gray 60%, rgb(202, 200, 200));
   color: white;
   font-size: 1em;
 }
 
 .add-button:hover {
-  background-color: var(--cf-color);
   color: #eff1f5;
-  box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.45);
 }
 .card img {
   margin: auto;
@@ -78,6 +78,15 @@ h2 {
   margin-right: 20px;
 }
 
+.cart-nototal-title {
+  font-size: 1.2em;
+  margin-right: 20px;
+}
+
+.bi-trash3-fill {
+  color: #94c3e4;
+}
+
 .btn-purchase {
   font-size: 1.5em;
   background-color: var(--cf-color);
@@ -89,6 +98,16 @@ h2 {
   -webkit-box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 25px -10px rgba(0, 0, 0, 0.75);
 }
+
+.btn-checkout {
+  background-image: linear-gradient(to top, #c8e2f4, #94c3e4 20%, #c8e2f4 80%);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-checkout:hover {
+  transform: scale(1.02);
+}
+
 footer {
   background-image: linear-gradient(to right, white,#b4d2e7);
   min-height: 100px;

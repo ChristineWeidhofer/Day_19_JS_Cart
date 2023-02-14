@@ -12,7 +12,7 @@ const products = [
     qtty: 1,
   },
   {
-    name: "EvenMoreBeautiful Bouquet",
+    name: "Stupendous Bouquet",
     image: "flower3.jpg",
     price: 210,
     qtty: 1,
@@ -35,8 +35,8 @@ for (let product of products) {
     <img class="card-img-top mt-2 px-3" src="./images/${product.image}" alt="${product.name}">
     <div class="card-body px-3 py-0">
         <h5 class="card-title text-center mt-2">${product.name}</h5>
-        <p class="card-text">A beautiful bouquet for your loved one - there is something for everyone, just look around our shop!</p>
-        <p class="card-text h4 text-end">${currencyFormater.format(product.price)}</p>
+        <p class="card-text text-muted px-4">A beautiful bouquet for your loved one - there is something for everyone, just look around our shop!</p>
+        <p class="card-text h5 text-end pe-4">${currencyFormater.format(product.price)}</p>
         <p class="card-text3 d-flex justify-content-center"><button class="btn w-75 add-button m-2"><i class="fs-4 bi bi-cart-plus"></i> Add to cart</button></p>
     </div>
   </div>
@@ -80,15 +80,15 @@ function createCart() {
       </div>
       <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
         <div class="d-flex">
-          <i class="plus fs-5 bi bi-plus-circle-fill"></i>
+          <i class="plus fs-5 bi bi-plus-circle-fill text-muted"></i>
         </div>
         <div class="text-center m-0 cart-quantity h4 w-25">${val.qtty}</div>
         <div class="d-flex">
-          <i class="minus fs-5 bi bi-dash-circle-fill"></i>
+          <i class="minus fs-5 bi bi-dash-circle-fill text-muted"></i>
         </div>
     </div>
     <div class="col-1 d-flex justify-content-start align-items-center">
-      <i class="del fs-4 bi bi-trash3-fill text-danger"></i>
+      <i class="del fs-4 bi bi-trash3-fill"></i>
     </div>
     <div class="cart-price col-3 h5 my-auto text-end pe-5">${currencyFormater.format(val.price)}</div>
     </div>                    
@@ -138,10 +138,27 @@ function total() {
       // total = total + (val.price * val.qtty);
       let disc = total / 10;
       total = total - disc;
-      document.getElementById("discount").innerHTML = `Your discount was: ${currencyFormater.format(disc)}!`;
+      document.getElementById("discount").innerHTML = `Your discount is ${currencyFormater.format(disc)}!`;
+      document.getElementById("disc").style.display = "none";
     } 
     amount += val.qtty;
     document.getElementById("amount").innerHTML = amount;
   }
   document.getElementById("price").innerHTML = currencyFormater.format(total);  
 }
+
+
+// Sweet Alert
+
+document.onload = setTimeout(function () {
+Swal.fire({
+  icon: 'warning',
+  iconColor: 'hotpink',
+  title: 'Discount!',
+  html: `Buy flowers over € 300,-- and get<br><h3>10 % off!</h3>`,
+  footer: 'what are you waiting for?',
+  background: '#deeefb',
+  position: 'top',
+  confirmButtonText: 'Let\'s go!'
+})
+}, 5000);
