@@ -74,21 +74,21 @@ function createCart() {
   for (let val of cart) {
     selCart.innerHTML += `
     <div class="cart-row row gx-0">
-      <div class="cart-item col-6 col-sm-6 my-2 d-flex align-items-center ps-5">
+      <div class="cart-item col-6 col-sm-6 my-2 d-flex align-items-center ps-2">
         <img class="cart-item-image" src="./images/${val.image}" width="100" height="100" alt="${val.name}">
-        <div class="cart-item-title h5 ms-2">${val.name}</div>
+        <div class="cart-item-title h6 ms-2">${val.name}</div>
       </div>
       <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
         <div class="d-flex">
           <i class="plus fs-5 bi bi-plus-circle-fill text-muted"></i>
         </div>
-        <div class="text-center m-0 cart-quantity h4 w-25">${val.qtty}</div>
+        <div class="text-center m-0 cart-quantity fs-5 w-25">${val.qtty}</div>
         <div class="d-flex">
           <i class="minus fs-5 bi bi-dash-circle-fill text-muted"></i>
         </div>
     </div>
     <div class="col-1 d-flex justify-content-start align-items-center">
-      <i class="del fs-4 bi bi-trash3-fill"></i>
+      <i class="del fs-5 bi bi-trash3-fill"></i>
     </div>
     <div class="cart-price col-3 h5 my-auto text-end pe-5">${currencyFormater.format(val.price)}</div>
     </div>                    
@@ -140,7 +140,9 @@ function total() {
       total = total - disc;
       document.getElementById("discount").innerHTML = `Your discount is ${currencyFormater.format(disc)}!`;
       document.getElementById("disc").style.display = "none";
-    } 
+    } else {
+      document.getElementById("discount").innerHTML = `Your discount is ${currencyFormater.format(0)}!`;
+    }
     amount += val.qtty;
     document.getElementById("amount").innerHTML = amount;
   }
