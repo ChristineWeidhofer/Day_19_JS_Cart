@@ -135,7 +135,6 @@ function total() {
   for (let val of cart) {
     total = total + (val.price * val.qtty);
     if (total >= 300) {
-      // total = total + (val.price * val.qtty);
       let disc = total / 10;
       total = total - disc;
       document.getElementById("discount").innerHTML = `Your discount is ${currencyFormater.format(disc)}!`;

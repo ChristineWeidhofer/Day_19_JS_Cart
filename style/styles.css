@@ -15,7 +15,6 @@ h2.hero-title, h2.basket-title {
 }
 .mynav {
   background-image: linear-gradient(to right, white,#b4d2e7);
-  /*background-image: url("./images/background_white.jpg");*/
   background-size: cover;
   min-height: 100px;
   max-width: 1600px !important; /*in case of a xxl screen*/
